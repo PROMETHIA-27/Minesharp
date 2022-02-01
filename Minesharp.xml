@@ -1,0 +1,757 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Minesharp</name>
+    </assembly>
+    <members>
+        <member name="T:Minesharp.Background">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minesharp.Background.Size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Minesharp.Background.Color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Minesharp.Background.GetBounds">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Background.GetDisplayTile(Minesharp.Point)">
+            <summary>
+            
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Minesharp.Bounds">
+            <summary>
+            A struct representing the upper left corner and lower right corner of a renderable object in the console
+            </summary>
+        </member>
+        <member name="M:Minesharp.Bounds.#ctor(Minesharp.Point,Minesharp.Point)">
+            <summary>
+            Construct a new bounds from two points
+            </summary>
+            <param name="upperLeft"></param>
+            <param name="lowerRight"></param>
+        </member>
+        <member name="F:Minesharp.Bounds.UpperLeftCorner">
+            <summary>
+            The upper left corner
+            </summary>
+        </member>
+        <member name="F:Minesharp.Bounds.LowerRightCorner">
+            <summary>
+            The lower right corner
+            </summary>
+        </member>
+        <member name="T:Minesharp.Color">
+            <summary>
+            An rgb struct representing color
+            </summary>
+        </member>
+        <member name="M:Minesharp.Color.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Create a new color from rgb values
+            </summary>
+            <param name="r"></param>
+            <param name="g"></param>
+            <param name="b"></param>
+        </member>
+        <member name="F:Minesharp.Color.R">
+            <summary>
+            Red value
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.G">
+            <summary>
+            Blue value
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.B">
+            <summary>
+            Green value
+            </summary>
+        </member>
+        <member name="M:Minesharp.Color.op_Equality(Minesharp.Color,Minesharp.Color)">
+            <summary>
+            Tests whether two colors are exactly the same
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Color.op_Inequality(Minesharp.Color,Minesharp.Color)">
+            <summary>
+            Tests whether two colors are not exactly the same
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Color.Equals(Minesharp.Color)">
+            <summary>
+            Tests whether two colors are exactly the same
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Color.Equals(System.Object)">
+            <summary>
+            Tests whether an object is an identical color
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Color.GetHashCode">
+            <summary>
+            Gets the hash code of this color
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Minesharp.Color.Black">
+            <summary>
+            Black
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.DarkGrey">
+            <summary>
+            Dark Grey
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.SlightlyDarkerGrey">
+            <summary>
+            Slightly Darker Grey (than light grey)
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.LightGrey">
+            <summary>
+            Light Grey
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.White">
+            <summary>
+            White
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.DarkerRed">
+            <summary>
+            Darker Red
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.Red">
+            <summary>
+            Red
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.DarkerGreen">
+            <summary>
+            Darker Green
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.Green">
+            <summary>
+            Green
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.DarkerCyan">
+            <summary>
+            Darker Cyan
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.Cyan">
+            <summary>
+            Cyan
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.DarkerBlue">
+            <summary>
+            Darker Blue
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.Blue">
+            <summary>
+            Blue
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.BrighterBlue">
+            <summary>
+            Brighter Blue
+            </summary>
+        </member>
+        <member name="F:Minesharp.Color.Purple">
+            <summary>
+            Purple
+            </summary>
+        </member>
+        <member name="T:Minesharp.ConsoleCursor">
+            <summary>
+            Represents a renderable cursor, to replace the default console cursor which should be hidden
+            </summary>
+        </member>
+        <member name="M:Minesharp.ConsoleCursor.#ctor(System.Char)">
+            <summary>
+            Create a new cursor with a certain character and default colors
+            </summary>
+            <param name="character"></param>
+        </member>
+        <member name="M:Minesharp.ConsoleCursor.#ctor(System.Char,Minesharp.Color,Minesharp.Color)">
+            <summary>
+            Create a new cursor with a certain character and colors
+            </summary>
+            <param name="character"></param>
+            <param name="fgColor"></param>
+            <param name="bgColor"></param>
+        </member>
+        <member name="P:Minesharp.ConsoleCursor.Character">
+            <summary>
+            The character to display this cursor as
+            </summary>
+        </member>
+        <member name="P:Minesharp.ConsoleCursor.Position">
+            <summary>
+            The position to display this cursor at
+            </summary>
+        </member>
+        <member name="P:Minesharp.ConsoleCursor.FgColor">
+            <summary>
+            The foreground color of the cursor
+            </summary>
+        </member>
+        <member name="P:Minesharp.ConsoleCursor.BgColor">
+            <summary>
+            The background color of the cursor
+            </summary>
+        </member>
+        <member name="M:Minesharp.ConsoleCursor.GetBounds">
+            <summary>
+            Get the bounds of this cursor on the screen
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.ConsoleCursor.GetDisplayTile(Minesharp.Point)">
+            <summary>
+            Get the displayable tile of this cursor
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Minesharp.ConsoleRenderer">
+            <summary>
+            Object for rendering to console efficiently using VT console commands
+            </summary>
+        </member>
+        <member name="F:Minesharp.ConsoleRenderer.buffer">
+            <summary>
+            The buffer the renderer uses to output to console
+            </summary>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new console renderer
+            </summary>
+            <param name="width">Width of the display view</param>
+            <param name="height">Height of the display view</param>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.ResizeBackendBuffer(System.Int32,System.Int32)">
+            <summary>
+            Change the size of the display view
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.MoveViewCursor(Minesharp.Point)">
+            <summary>
+            Move the cursor used for writing to the view
+            </summary>
+            <param name="position">The position to set the cursor to</param>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.WriteToView(Minesharp.DisplayTile)">
+            <summary>
+            Write a displaytile into the view where the viewcursor is
+            </summary>
+            <param name="tile">DisplayTile to write</param>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.SkipCursor">
+            <summary>
+            Move the view cursor ahead as if writing to the view, but writing nothing
+            </summary>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.WriteColorToBuffer(System.IO.StreamWriter,System.Boolean,Minesharp.Color)">
+            <summary>
+            Write a color code to the given console buffer
+            </summary>
+            <param name="buffer">Console buffer to write a color code to</param>
+            <param name="foreground">Whether the color is in the foreground or background</param>
+            <param name="color">Color to write</param>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.Draw``1(``0)">
+            <summary>
+            Render a renderable object to the view, allowing it to be rendered to the console when Render() is called, assuming it is not drawn over later
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="renderable"></param>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.GetViewBounds">
+            <summary>
+            Get the bounds of the view of this renderer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.ConsoleRenderer.Render">
+            <summary>
+            Render the view to the console
+            </summary>
+        </member>
+        <member name="T:Minesharp.DisplayTile">
+            <summary>
+            A struct containing information for displaying to console; a character, and foreground and background colors.
+            </summary>
+        </member>
+        <member name="M:Minesharp.DisplayTile.#ctor(System.Char)">
+            <summary>
+            Create a new display tile from a character, with white on black foreground/background colors
+            </summary>
+            <param name="character"></param>
+        </member>
+        <member name="M:Minesharp.DisplayTile.#ctor(System.Char,Minesharp.Color,Minesharp.Color)">
+            <summary>
+            Create a new display tile from a character, with a certain foreground color and optional background color, defaulting to black
+            </summary>
+            <param name="character"></param>
+            <param name="fgColor"></param>
+            <param name="bgColor"></param>
+        </member>
+        <member name="F:Minesharp.DisplayTile.character">
+            <summary>
+            The character that a DisplayTile displays to the console
+            </summary>
+        </member>
+        <member name="F:Minesharp.DisplayTile.fgColor">
+            <summary>
+            The foreground color of a DisplayTile
+            </summary>
+        </member>
+        <member name="F:Minesharp.DisplayTile.bgColor">
+            <summary>
+            The background color of a DisplayTile
+            </summary>
+        </member>
+        <member name="T:Minesharp.Extensions">
+            <summary>
+            A class of extensions for various objects around the Minesharp codebase
+            </summary>
+        </member>
+        <member name="M:Minesharp.Extensions.GetWidth``1(``0)">
+            <summary>
+            Get the total width of a renderable object based on its bounds
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="renderable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Extensions.GetHeight``1(``0)">
+            <summary>
+            Get the total height of a renderable object based on its bounds
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="renderable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Extensions.ContainsPoint(Minesharp.Bounds,Minesharp.Point)">
+            <summary>
+            Returns whether or not a point lies in a bounds
+            </summary>
+            <param name="bounds"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Extensions.Min(Minesharp.Point,Minesharp.Point)">
+            <summary>
+            Return a point with the minimum x and y values of both points
+            </summary>
+            <param name="p"></param>
+            <param name="min"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Extensions.Max(Minesharp.Point,Minesharp.Point)">
+            <summary>
+            Return a point with the maximum x and y values of both points
+            </summary>
+            <param name="p"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Extensions.ToColor(System.Int32)">
+            <summary>
+            Read the bytes from an int to transform it into a color
+            </summary>
+            <param name="x"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Extensions.ToForegroundString(Minesharp.Color)">
+            <summary>
+            Converts a color into an VT code for setting console foreground color
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Extensions.ToBackgroundString(Minesharp.Color)">
+            <summary>
+            Converts a color into a VT code for setting console background color
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Minesharp.Game">
+            <summary>
+            Class representing the minesweeper game
+            </summary>
+        </member>
+        <member name="F:Minesharp.Game.renderStack">
+            <summary>
+            A stack of renderable objects. They are drawn in order from 0 to n, where n is the last member of the list.
+            </summary>
+        </member>
+        <member name="M:Minesharp.Game.Start">
+            <summary>
+            Start the game
+            </summary>
+        </member>
+        <member name="M:Minesharp.Game.GameLoop">
+            <summary>
+            Starts a game loop, exited by setting exit to true.
+            </summary>
+        </member>
+        <member name="T:Minesharp.IRenderable">
+            <summary>
+            Interface for objects that can be rendered to the console
+            </summary>
+        </member>
+        <member name="M:Minesharp.IRenderable.GetBounds">
+            <summary>
+            Gets a bounds struct representing the upper left corner and lower right corner of the object in the console coordinates
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.IRenderable.GetDisplayTile(Minesharp.Point)">
+            <summary>
+            Gets a display tile at a certain point from this renderable object
+            </summary>
+            <param name="p">The point to render</param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.IRenderable.GetDisplayTile(System.Int32,System.Int32)">
+            <summary>
+            Gets a display tile at a certain point from this renderable object
+            </summary>
+            <param name="x">The x coordinate of the point to render</param>
+            <param name="y">The y coordinate of the point to render</param>
+            <returns></returns>
+        </member>
+        <member name="T:Minesharp.Minefield">
+            <summary>
+            A logical representation of a minefield for the purposes of minesweeper, which also can be rendered
+            </summary>
+        </member>
+        <member name="F:Minesharp.Minefield.Settings">
+            <summary>
+            Settings blob for the minefield
+            </summary>
+        </member>
+        <member name="M:Minesharp.Minefield.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Create a new minefield of a specific width and height
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="P:Minesharp.Minefield.Item(Minesharp.Point)">
+            <summary>
+            Get the tile at a position in this field
+            </summary>
+            <param name="p">Position to get tile at</param>
+            <returns>Minefield tile</returns>
+        </member>
+        <member name="P:Minesharp.Minefield.Item(System.Int32,System.Int32)">
+            <summary>
+            Get the tile at a position in this field
+            </summary>
+            <param name="x">X coordinate of the position to get tile at</param>
+            <param name="y">Y coordinate of the position to get tile at</param>
+            <returns>Minefield tile</returns>
+        </member>
+        <member name="P:Minesharp.Minefield.Width">
+            <summary>
+            Width of the minefield
+            </summary>
+        </member>
+        <member name="P:Minesharp.Minefield.Height">
+            <summary>
+            Height of the minefield
+            </summary>
+        </member>
+        <member name="M:Minesharp.Minefield.GetRandomPoint(System.Random)">
+            <summary>
+            Use a random number generator to get a randomized point, constrained to the size of this minefield
+            </summary>
+            <param name="rand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Minefield.GetRandomPoint(System.Random,System.Int32,System.Int32)">
+            <summary>
+            Use a random number generator to get a randomized point, constrained to a particular size
+            </summary>
+            <param name="rand"></param>
+            <param name="maxHeight"></param>
+            <param name="maxWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Minefield.GetAdjacentMines(Minesharp.Point)">
+            <summary>
+            Get the number of mines directly bordering a tile at a point, including diagonals
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Minefield.GetAdjacentPointsWhere(Minesharp.Point,System.Func{Minesharp.Tile,System.Boolean},Minesharp.Point[])">
+            <summary>
+            Fills an array with points adjacent to a given point that match a certain criteria, given by the predicate
+            </summary>
+            <param name="predicate"></param>
+            <param name="points"></param>
+            <returns>The number of points returned in the array</returns>
+        </member>
+        <member name="M:Minesharp.Minefield.ResetMinefield(System.Int32,System.Int32)">
+            <summary>
+            Resets the minefield, allowing a new size to be set
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:Minesharp.Minefield.RandomizeRemainder(System.Random)">
+            <summary>
+            Randomly places remainder of mines around the board. Should be called before any chunks are randomized
+            </summary>
+            <param name="rand"></param>
+        </member>
+        <member name="F:Minesharp.Minefield.chunkSize">
+            <summary>
+            Width and height of chunks for purposes of dividing the minefield for rapid generation
+            </summary>
+        </member>
+        <member name="M:Minesharp.Minefield.RandomizeChunk(System.Random,Minesharp.Point)">
+            <summary>
+            Randomize a region of the minefield. Is designed to be lazily evaluated when the player moves their cursor into an unevaluated chunk.
+            </summary>
+            <param name="rand"></param>
+            <param name="chunk"></param>
+        </member>
+        <member name="M:Minesharp.Minefield.FloodReveal(Minesharp.Point)">
+            <summary>
+            Reveal all 0-tiles connected to the given tile, as well as n-tiles connected directly to a revealed tile
+            </summary>
+            <param name="p">0-tile to reveal</param>
+            <returns>True if a mine is revealed</returns>
+        </member>
+        <member name="M:Minesharp.Minefield.PointToChunk(Minesharp.Point)">
+            <summary>
+            Find which chunk of the board a point lies in
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Minefield.ToggleTileFlag(Minesharp.Point)">
+            <summary>
+            Set a tile's state to flagged
+            </summary>
+            <param name="pos"></param>
+        </member>
+        <member name="M:Minesharp.Minefield.RevealTile(Minesharp.Point)">
+            <summary>
+            Reveal a tile, and return true if it's a mine
+            </summary>
+            <param name="pos">Position to reveal</param>
+            <returns>True if the revealed tile is a mine</returns>
+        </member>
+        <member name="M:Minesharp.Minefield.GetBounds">
+            <summary>
+            Get the bounds of this minefield as a renderable object
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.Minefield.GetDisplayTile(Minesharp.Point)">
+            <summary>
+            Gets the displayable tile at a certain point
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Minesharp.MinefieldSettings">
+            <summary>
+            A settings object for the minefield
+            </summary>
+        </member>
+        <member name="F:Minesharp.MinefieldSettings.MineMin">
+            <summary>
+            The fewest mines that can be placed on generation of the minefield
+            </summary>
+        </member>
+        <member name="F:Minesharp.MinefieldSettings.MineMax">
+            <summary>
+            The most mines that can be placed on generation of the minefield
+            </summary>
+        </member>
+        <member name="F:Minesharp.MinefieldSettings.MineCount">
+            <summary>
+            The current amount of mines that will be placed during generation of the minefield
+            </summary>
+        </member>
+        <member name="M:Minesharp.MinefieldSettings.CalculateMineCount(System.Random)">
+            <summary>
+            Calculate the number of mines that will be placed on the minefield, assinging it to MineCount and returning it
+            </summary>
+            <param name="rand">A random generator to use to determine number of mines to place</param>
+            <returns>The number of mines to place</returns>
+        </member>
+        <member name="T:Minesharp.PanningBorder">
+            <summary>
+            A renderable object to represent the ability to pan left, right, up, and down the minefield
+            </summary>
+        </member>
+        <member name="F:Minesharp.PanningBorder.Bounds">
+            <summary>
+            The bounds of the border on the view
+            </summary>
+        </member>
+        <member name="M:Minesharp.PanningBorder.#ctor(Minesharp.Bounds)">
+            <summary>
+            Create a new border from a bounds
+            </summary>
+            <param name="bounds"></param>
+        </member>
+        <member name="M:Minesharp.PanningBorder.PointToChar(Minesharp.Point)">
+            <summary>
+            Convert a point to a char within the border
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.PanningBorder.GetBounds">
+            <summary>
+            Return the bounds of this border
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Minesharp.PanningBorder.GetDisplayTile(Minesharp.Point)">
+            <summary>
+            Create a display tile from a point on this border
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Minesharp.Point">
+            <summary>
+            A 2D point in space
+            </summary>
+        </member>
+        <member name="M:Minesharp.Point.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Construct a new point from two coordinates
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="F:Minesharp.Point.x">
+            <summary>
+            The x coordinate
+            </summary>
+        </member>
+        <member name="F:Minesharp.Point.y">
+            <summary>
+            The y coordinate
+            </summary>
+        </member>
+        <member name="M:Minesharp.Point.op_Addition(Minesharp.Point,Minesharp.Point)">
+            <summary>
+            Add two points together, summing their coordinates
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns>Sum of the two points</returns>
+        </member>
+        <member name="M:Minesharp.Point.op_Multiply(Minesharp.Point,System.Int32)">
+            <summary>
+            Multiply a point by a scalar value, multiplying each of its coordinates
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns>A multiplied point</returns>
+        </member>
+        <member name="M:Minesharp.Point.op_Multiply(System.Int32,Minesharp.Point)">
+            <summary>
+            Multiply a point by a scalar value, multiplying each of its coordinates
+            </summary>
+            <param name="lhs"></param>
+            <param name="rhs"></param>
+            <returns>A multiplied point</returns>
+        </member>
+        <member name="M:Minesharp.Point.Equals(Minesharp.Point)">
+            <summary>
+            Check if two points are exactly equal
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Minesharp.Tile">
+            <summary>
+            A representation of a minesweeper tile
+            </summary>
+        </member>
+        <member name="M:Minesharp.Tile.#ctor(Minesharp.TileState)">
+            <summary>
+            Create a new tile from a state bitflag
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="F:Minesharp.Tile.state">
+            <summary>
+            Bitflag enum representing the state of the tile
+            </summary>
+        </member>
+        <member name="T:Minesharp.TileState">
+            <summary>
+            A bitflag enum representing the state of a minesweeper tile
+            </summary>
+        </member>
+        <member name="F:Minesharp.TileState.None">
+            <summary>
+            The tile is not a mine, flagged, or revealed
+            </summary>
+        </member>
+        <member name="F:Minesharp.TileState.Mine">
+            <summary>
+            The tile holds a mine
+            </summary>
+        </member>
+        <member name="F:Minesharp.TileState.Flagged">
+            <summary>
+            The tile is flagged
+            </summary>
+        </member>
+        <member name="F:Minesharp.TileState.Revealed">
+            <summary>
+            The tile is revealed
+            </summary>
+        </member>
+    </members>
+</doc>
