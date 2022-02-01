@@ -78,7 +78,8 @@ namespace Minesharp
                 var timestamp = Stopwatch.GetTimestamp();
                 var deltaTime = (timestamp - lastTimestamp) / (double)Stopwatch.Frequency;
 
-                while (deltaTime < (1.0d / 144.0d))
+                // Here is where FPS is set
+                while (deltaTime < (1.0d / 60.0d))
                 {
                     Thread.Sleep(0);
                     timestamp = Stopwatch.GetTimestamp();
