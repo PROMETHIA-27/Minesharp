@@ -1,4 +1,4 @@
 # Minesharp
-A minesweeper developed in C#
+A minesweeper for the terminal developed in C#
 
 Unfinished, unlikely to be finished.
